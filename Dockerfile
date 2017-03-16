@@ -32,9 +32,6 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ### Increase upload size
 COPY upload_100m.conf /etc/nginx/conf.d/
 
-COPY ./app /app
-WORKDIR /app
-
 #### begin Spfy
 # dev tools (mainly the C Compiler you'll need to uWSGI)
 RUN apt-get update && apt-get install -y build-essential
@@ -57,6 +54,9 @@ RUN conda config --add channels conda-forge && conda config --add channels bioco
 # activate the app environment
 ENV PATH /opt/conda/envs/backend/bin:$PATH
 #### End Spfy
+
+COPY ./app /app
+WORKDIR /app
 
 RUN echo $PATH
 RUN which uwsgi
