@@ -5,6 +5,7 @@ Think of this as two things:
 So to reiterate:
 * Top level: base image
 * `exmample/`: you app
+* dogs: :dog:
 
 #### To modify the conda env:
 * Change lines `55` & `58` of `Dockerfile`

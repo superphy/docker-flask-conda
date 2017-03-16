@@ -1,3 +1,3 @@
-FROM tiangolo/uwsgi-nginx-flask:flask
+FROM baseimage
 
 COPY ./app /app
