@@ -127,6 +127,7 @@ dependencies:
   - rdflib-jsonld==0.4.0
   - rq==0.7.1
   - rq-dashboard==0.3.7
+  - scipy==0.19.0
   - sparqlwrapper==1.7.6
   - sqlalchemy==1.1.5
   - uwsgi==2.0.14
