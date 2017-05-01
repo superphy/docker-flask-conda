@@ -113,6 +113,7 @@ dependencies:
   - dominate==2.3.1
   - flask-bootstrap==3.3.7.1
   - flask-bower==1.2.1
+  - flask-cors==3.0.2
   - flask-migrate==2.0.3
   - flask-recaptcha==0.4.2
   - flask-script==2.0.5
