@@ -7,9 +7,8 @@ services:
 
 before_install:
   - docker build -t superphy/docker-flask-conda:latest .
-  - docker run -d -p 127.0.0.1:80:4567 superphy/docker-flask-conda:latest /bin/sh -c "cd /root/docker-flask-conda; bundle exec foreman start;"
+  - docker run -d -p 127.0.0.1:80:4567 superphy/docker-flask-conda:latest
   - docker ps -a
-  - docker run superphy/docker-flask-conda:latest /bin/sh -c "cd /root/docker-flask-conda; bundle exec rake test"
 
 install:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
