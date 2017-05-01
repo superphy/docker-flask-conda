@@ -14,4 +14,4 @@ install:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push superphy/docker-flask-conda:latest
 script:
-  - curl http://127.0.0.1:80:4567
+  - curl http://localhost:4567
