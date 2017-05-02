@@ -5,15 +5,13 @@ language: ruby
 services:
   - docker
 
-before_install:
-  - docker build -t superphy/docker-flask-conda:latest .
-  - docker run -d -p 127.0.0.1:80:4567 superphy/docker-flask-conda:latest
-  - docker ps -a
-
 install:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push superphy/docker-flask-conda:latest
-script:
-  - curl http://localhost:4567
+  - export REPO=superphy/docker-flask-conda
+  - export TAG=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  - docker build -f Dockerfile -t $REPO:$COMMIT .
+  - docker tag $REPO:$COMMIT $REPO:$TAG
+  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+  - docker push $REPO
 notifications:
   email: false
