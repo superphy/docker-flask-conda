@@ -18,5 +18,8 @@ install:
   - echo $TRAVIS_BRANCH
   - docker push superphy/docker-flask-conda:latest
 
+script:
+  - docker ps
+
 notifications:
   email: false
