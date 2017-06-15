@@ -22,8 +22,6 @@ dependencies:
 - !!python/unicode
   'click=6.6=py27_0'
 - !!python/unicode
-  'isodate=0.5.4=py27_0'
-- !!python/unicode
   'jpeg=9b=0'
 - !!python/unicode
   'mmtf-python=1.0.5=py27_0'
@@ -121,6 +119,7 @@ dependencies:
   - flask-uploads==0.2.1
   - flask-wtf==0.14.2
   - gunicorn==19.6.0
+  - isodate==0.5.4
   - keepalive==0.5
   - mako==1.0.6
   - python-editor==1.0.3
