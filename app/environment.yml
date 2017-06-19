@@ -8,6 +8,8 @@ channels:
   'bioconda'
 - !!python/unicode
   'defaults'
+- !!python/unicode
+  'conda-forge'
 dependencies:
 - !!python/unicode
   'libpq=9.5.4=0'
