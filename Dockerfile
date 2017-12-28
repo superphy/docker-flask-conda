@@ -1,5 +1,7 @@
 FROM nginx:1.13.8
 
+RUN apt-get install python && apt-get install python-pip
+
 # Check the Python version.
 RUN python -V
 
