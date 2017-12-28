@@ -2,7 +2,7 @@ FROM nginx:1.13.8
 
 # Install Python2
 RUN apt-get update
-RUN apt-get install python && apt-get install python-pip
+RUN apt-get install python -y && apt-get install python-pip -y
 
 # Check the Python version.
 RUN python -V
