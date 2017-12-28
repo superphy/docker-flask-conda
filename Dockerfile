@@ -1,7 +1,7 @@
 FROM nginx:1.13.8
 
 # Install Python2
-RUN echo "deb  http://deb.debian.org/debian  stretch main" >> /etc/apt/sources.list
+RUN apt-get update
 RUN apt-get install python && apt-get install python-pip
 
 # Check the Python version.
