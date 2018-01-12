@@ -7,6 +7,9 @@ RUN apt-get install python -y && apt-get install python-pip -y
 # Check the Python version.
 RUN python -V
 
+# Install cURL (used for tests)
+RUN apt-get install curl -y
+
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
