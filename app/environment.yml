@@ -203,7 +203,7 @@ dependencies:
   - panseq=3.1.1=0
   - bower=1.7.6=0
   - nodejs=4.4.0=0
-  - ectyper=0.9=py27_0
+  - ectyper=0.0.9=py27_0
   - phylotyper=0.1.1=py27r332hefc3a68_0
   - pip:
     - alembic==0.8.10
