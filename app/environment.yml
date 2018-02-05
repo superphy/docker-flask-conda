@@ -235,5 +235,4 @@ dependencies:
     - visitor==0.1.3
     - wtforms==2.1
     - xlrd==1.1.0
-prefix: /home/matt/anaconda3/envs/backend
 
