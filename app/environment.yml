@@ -26,7 +26,7 @@ dependencies:
 - msgpack-python=0.4.8=py27_0
 - numpy=1.11.3=py27_0
 - openssl=1.0.2j=0
-- pandas=0.19.2=np111py27_1
+- pandas=0.21.1=py27h38cdd7d_0
 - pillow=4.0.0=py27_0
 - pip=9.0.1=py27_1
 - psycopg2=2.6.2=py27_0
