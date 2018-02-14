@@ -225,6 +225,7 @@ dependencies:
     - flask-uploads==0.2.1
     - flask-wtf==0.14.2
     - gunicorn==19.6.0
+    - jsonmodels==2.3
     - mako==1.0.6
     - python-editor==1.0.3
     - raven==5.32.0
