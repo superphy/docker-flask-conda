@@ -80,6 +80,7 @@ dependencies:
   - future==0.16.0
   - gunicorn==19.6.0
   - jose==1.0.0
+  - jsonmodels==2.3
   - mako==1.0.6
   - passlib==1.7.1
   - pycparser==2.18
