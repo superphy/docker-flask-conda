@@ -212,6 +212,7 @@ dependencies:
     - arrow==0.10.0
     - blinker==1.4
     - contextlib2==0.5.4
+    - dill==0.2.7.1
     - dominate==2.3.1
     - flask-bootstrap==3.3.7.1
     - flask-bower==1.2.1
