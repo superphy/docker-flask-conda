@@ -340,7 +340,7 @@ dependencies:
 - !!python/unicode
   'r-openssl=0.9.5=r3.3.2_0'
 - !!python/unicode
-  'r-pkgmaker=0.22=r3.3.2_0'
+  'r-pkgmaker>=0.22'
 - !!python/unicode
   'r-plyr=1.8.4=r3.3.2_0'
 - !!python/unicode
