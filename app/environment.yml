@@ -254,7 +254,7 @@ dependencies:
 - !!python/unicode
   'r-class=7.3_14=r3.3.2_0'
 - !!python/unicode
-  'r-cluster=2.0.6=r342hcb72a25_0'
+  'r-cluster>=2.0.6'
 - !!python/unicode
   'r-coda=0.18_1=r3.3.2_0'
 - !!python/unicode
@@ -340,7 +340,7 @@ dependencies:
 - !!python/unicode
   'r-openssl=0.9.5=r3.3.2_0'
 - !!python/unicode
-  'r-pkgmaker>=0.22'
+  'r-pkgmaker=0.22=r3.3.2_0'
 - !!python/unicode
   'r-plyr=1.8.4=r3.3.2_0'
 - !!python/unicode
