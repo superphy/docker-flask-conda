@@ -24,6 +24,9 @@ script:
 after_failure::
   - conda env list
   - pip list
+  - conda env list | grep ssl
+  - pip list | grep ssl
+  - pip list | grep uwsgi
 
 notifications:
   email: false
