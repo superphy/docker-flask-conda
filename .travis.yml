@@ -16,7 +16,7 @@ install:
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
   - echo $TAG
   - echo $TRAVIS_BRANCH
-  - docker push superphy/docker-flask-conda:latest
+  - docker push superphy/docker-flask-conda:$TAG
 
 script:
   - docker ps
