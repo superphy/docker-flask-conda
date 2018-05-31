@@ -144,8 +144,8 @@ RUN conda config --add channels conda-forge && conda config --add channels bioco
 RUN conda install -c bioconda rgi==4.0.3
 
 # activate the app environment
-ENV PATH /opt/conda/envs/backend/bin:$PATH
-RUN source activate $ENVNAME
+ENV PATH /opt/conda/envs/$ENVNAME/bin:$PATH
+RUN /opt/conda/envs/$ENVNAME/bin/activate
 #### End Spfy
 
 RUN echo $PATH
