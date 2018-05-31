@@ -70,7 +70,7 @@ dependencies:
   - wheel=0.29.0=py27_0
   - xz=5.2.2=1
   - yaml=0.1.6=0
-  - zlib=1.2.8=3
+  - zlib
   - bcftools=1.6=0
   - bioconductor-biocgenerics=0.20.0=r3.3.2_0
   - bioconductor-biostrings=2.42.1=r3.3.2_0
