@@ -5,8 +5,8 @@ channels:
   - javascript
   - jamez-eh
   - compbiocore
-  - anaconda
   - bioconda
+  - anaconda
   - conda-forge
   - defaults
 dependencies:
