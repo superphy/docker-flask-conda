@@ -9,8 +9,30 @@ So to reiterate:
 * `exmample/`: you app
 * dogs: :dog:
 
+# Conda vs. Pip
+
+Due to conda's preference for its own Python repository (instead of pip) & the
+out-of-date problems assoc. with this, we use conda for dependencies which are
+only available there.
+Conda also lacks channel pinning (or hash pinning for that matter) and thus, we
+try to keep everything out of conda if possible.
+
+A standard pip requirements.txt file is the preferred way to adding Python deps.
+Note: if you activate a conda env, then do a `pip install`, conda has a tendency
+to add your pypi dependency into its own environment.yml dep. instead when doing
+a `conda env export`. Try to ensure that we're pulling for pypi install of
+anaconda cloud when updating this repo.
+
+The Dockerfile will build the conda env first, then use pip to install your
+requirements.txt deps. inside that env. This image is what's shipped.
+
 #### To modify the conda env:
-* Change lines `55` & `58` of `Dockerfile`
+* Change the app/environment.yml file.
+
+#### To modify the pip requirements:
+* Change the app/requirements.txt file.
+
+
 
 #### To Build Base Image:
 `docker build -t baesimage .`

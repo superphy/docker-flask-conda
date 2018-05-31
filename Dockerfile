@@ -136,16 +136,24 @@ RUN apt-get install -y curl grep sed dpkg && \
     apt-get clean
 
 #### Conda env.
+ENV ENVNAME backend
+
 RUN conda update -n base conda
 RUN conda update openssl --no-pin
-RUN conda config --add channels conda-forge && conda config --add channels bioconda && conda env create -n backend -f environment.yml
+RUN conda config --add channels conda-forge && conda config --add channels bioconda && conda env create -n $ENVNAME -f environment.yml
 RUN conda install -c bioconda rgi==4.0.3
 
 # activate the app environment
 ENV PATH /opt/conda/envs/backend/bin:$PATH
+RUN source activate $ENVNAME
 #### End Spfy
 
 RUN echo $PATH
+
+#### Install pip requirements seprately from conda.
+RUN pip install -r requirements.txt
+
+# Check uwsgi
 RUN which uwsgi
 
 CMD ["/usr/bin/supervisord"]
