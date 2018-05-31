@@ -42,7 +42,6 @@ dependencies:
   - msgpack-python=0.4.8=py27_0
   - ncurses=5.9=10
   - numpy=1.11.3=py27_0
-  - openssl
   - pango=1.40.3=1
   - pcre=8.39=1
   - pillow=4.0.0=py27_0
