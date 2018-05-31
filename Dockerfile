@@ -136,6 +136,7 @@ RUN apt-get install -y curl grep sed dpkg && \
     apt-get clean
 
 #### Conda env.
+RUN conda update -n base conda
 RUN conda config --add channels conda-forge && conda config --add channels bioconda && conda env create -n backend -f environment.yml
 RUN conda install -c bioconda rgi==4.0.3
 
