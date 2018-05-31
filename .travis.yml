@@ -21,5 +21,9 @@ install:
 script:
   - docker ps
 
+after_failure::
+  - conda env list
+  - pip list
+
 notifications:
   email: false
