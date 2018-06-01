@@ -143,14 +143,17 @@ RUN conda update openssl --no-pin
 RUN conda config --add channels conda-forge && conda config --add channels bioconda && conda env create -n $ENVNAME -f environment.yml
 RUN conda install -c bioconda rgi==4.0.3
 
-# activate the app environment
+# Add env to path.
 ENV PATH /opt/conda/envs/$ENVNAME/bin:$PATH
-RUN /opt/conda/envs/$ENVNAME/bin/activate
-#### End Spfy
 
+# Path check.
 RUN echo $PATH
 RUN source ~/.bashrc
 RUN echo $PATH
+
+# Activate the app environment
+RUN /opt/conda/envs/$ENVNAME/bin/activate
+#### End Spfy
 
 #### Install pip requirements seprately from conda.
 RUN pip install -r requirements.txt
