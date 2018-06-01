@@ -149,6 +149,8 @@ RUN /opt/conda/envs/$ENVNAME/bin/activate
 #### End Spfy
 
 RUN echo $PATH
+RUN source ~/.bashrc
+RUN echo $PATH
 
 #### Install pip requirements seprately from conda.
 RUN pip install -r requirements.txt
