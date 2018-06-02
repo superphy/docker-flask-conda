@@ -148,11 +148,10 @@ ENV PATH /opt/conda/envs/$ENVNAME/bin:$PATH
 
 # Path check.
 RUN echo $PATH
-RUN source ~/.bashrc
-RUN echo $PATH
+RUN bash echo $PATH
 
 # Activate the app environment
-RUN /opt/conda/envs/$ENVNAME/bin/activate
+RUN bash /opt/conda/envs/$ENVNAME/bin/activate
 #### End Spfy
 
 #### Install pip requirements seprately from conda.
