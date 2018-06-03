@@ -6,14 +6,14 @@ Think of this as two things:
 
 So to reiterate:
 * Top level: base image
-* `exmample/`: you app
+* `example/`: your app
 * dogs: :dog:
 
 # Conda vs. Pip
 
-Due to conda's preference for its own Python repository (instead of pip) & the
+Due to conda's preference for its own Python repository (instead of pypi) & the
 out-of-date problems assoc. with this, we use conda for dependencies which are
-only available there.
+*only* available there.
 Conda also lacks channel pinning (or hash pinning for that matter) and thus, we
 try to keep everything out of conda if possible.
 
