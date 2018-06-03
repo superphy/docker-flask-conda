@@ -17,7 +17,7 @@ script:
   - docker run -d -p 127.0.0.1:80:4567 superphy/docker-flask-conda:$TAG
   - docker ps -a
 
-deploy:
+after_success:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   - docker push superphy/docker-flask-conda:$TAG
 
