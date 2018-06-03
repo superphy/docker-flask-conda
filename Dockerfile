@@ -150,8 +150,8 @@ ENV PATH /opt/conda/envs/$ENVNAME/bin:$PATH
 RUN echo $PATH
 
 # Activate the app environment
-RUN ls -lah /opt/conda/envs/backend/bin/
-RUN /opt/conda/envs/$ENVNAME/bin/activate
+#RUN ls -lah /opt/conda/envs/backend/bin/
+#RUN /opt/conda/envs/$ENVNAME/bin/activate
 #### End Spfy
 
 #### Install pip requirements seprately from conda.
