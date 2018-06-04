@@ -157,7 +157,9 @@ RUN echo $PATH
 #### Install pip requirements seprately from conda.
 RUN pip install -r requirements.txt
 
-# Check uwsgi
+# Checks.
+RUN which rgi
+RUN which ectyper
 RUN which uwsgi
 
 CMD ["/usr/bin/supervisord"]

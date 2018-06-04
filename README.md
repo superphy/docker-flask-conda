@@ -18,10 +18,10 @@ Conda also lacks channel pinning (or hash pinning for that matter) and thus, we
 try to keep everything out of conda if possible.
 
 A standard pip requirements.txt file is the preferred way to adding Python deps.
-Note: if you activate a conda env, then do a `pip install`, conda has a tendency
-to add your pypi dependency into its own environment.yml dep. instead when doing
-a `conda env export`. Try to ensure that we're pulling for pypi install of
-anaconda cloud when updating this repo.
+Note: if you activate a conda env, then do a `pip install` to create an update
+with `conda env export`, conda has a tendency to add your pypi dependency into
+its own list of anaconda cloud dependencies instead. Try to ensure that we're
+pulling from pypi instead of anaconda cloud when updating this repo.
 
 The Dockerfile will build the conda env first, then use pip to install your
 requirements.txt deps. inside that env. This image is what's shipped.
@@ -31,8 +31,6 @@ requirements.txt deps. inside that env. This image is what's shipped.
 
 #### To modify the pip requirements:
 * Change the app/requirements.txt file.
-
-
 
 #### To Build Base Image:
 `docker build -t baesimage .`
