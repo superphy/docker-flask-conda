@@ -141,7 +141,7 @@ ENV ENVNAME backend
 RUN conda update -n base conda
 RUN conda update openssl --no-pin
 RUN conda config --add channels conda-forge && conda config --add channels bioconda && conda env create -n $ENVNAME -f environment.yml
-RUN conda install -c bioconda rgi==4.0.3
+#RUN conda install -c bioconda rgi==4.0.3
 
 # Add env to path.
 ENV PATH /opt/conda/envs/$ENVNAME/bin:$PATH
