@@ -146,7 +146,7 @@ RUN conda config --add channels conda-forge && conda config --add channels bioco
 ENV card broadstreet-v2.0.1.tar.gz
 RUN wget --quiet https://card.mcmaster.ca/download/0/$card && \
 		tar -xf $card
-RUN rgi load --afile card.json
+RUN /opt/conda/envs/$ENVNAME/bin/rgi load --afile card.json
 
 # Add env to path.
 ENV PATH /opt/conda/envs/$ENVNAME/bin:$PATH
