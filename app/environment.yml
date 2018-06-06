@@ -46,9 +46,7 @@ dependencies:
 - wheel=0.29.0=py27_0
 - xz=5.2.2=1
 - zlib=1.2.8=3
-- biopython=1.68=py27_0
-- blast=2.6.0=boost1.60_0
-- prodigal=2.6.3=0
+- biopython
 - keepalive=0.5=py27_0
 - mmtf-python=1.0.5=py27_0
 - rdflib=4.2.1=py27_0
