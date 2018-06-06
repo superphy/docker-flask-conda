@@ -142,17 +142,17 @@ RUN conda update -n base conda
 RUN conda update openssl --no-pin
 RUN conda config --add channels conda-forge && conda config --add channels bioconda && conda env create -n $ENVNAME -f environment.yml
 
-# Additional setup for rgi
-ENV card broadstreet-v2.0.1.tar.gz
-RUN wget --quiet https://card.mcmaster.ca/download/0/$card && \
-		tar -xf $card
-RUN /opt/conda/envs/$ENVNAME/bin/rgi load --afile card.json
-
 # Add env to path.
 ENV PATH /opt/conda/envs/$ENVNAME/bin:$PATH
 
 # Path check.
 RUN echo $PATH
+
+# Additional setup for rgi.
+ENV card broadstreet-v2.0.1.tar.gz
+RUN wget --quiet https://card.mcmaster.ca/download/0/$card && \
+		tar -xf $card
+RUN rgi load --afile card.json
 
 # Activate the app environment
 #RUN ls -lah /opt/conda/envs/backend/bin/
