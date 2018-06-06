@@ -6,6 +6,8 @@ channels:
 - anaconda
 - defaults
 dependencies:
+- blast=2.6.0=boost1.60_0
+- biopython=1.70=py27_0
 - boost=1.60.0=py27_0
 - click=6.6=py27_0
 - flask=0.12=py27_0
@@ -29,6 +31,7 @@ dependencies:
 - pandas=0.21.1=py27h38cdd7d_0
 - pillow=4.0.0=py27_0
 - pip=9.0.1=py27_1
+- prodigal=2.6.3=0
 - psycopg2=2.6.2=py27_0
 - pyparsing=2.1.4=py27_0
 - python=2.7.13=0
@@ -38,6 +41,7 @@ dependencies:
 - redis=3.2.0=0
 - reportlab=3.3.0=py27_0
 - requests=2.12.4=py27_0
+- rgi=4.0.3=py27_0
 - setuptools=27.2.0=py27_0
 - six=1.10.0=py27_0
 - sqlite=3.13.0=0
@@ -46,7 +50,6 @@ dependencies:
 - wheel=0.29.0=py27_0
 - xz=5.2.2=1
 - zlib=1.2.8=3
-- biopython
 - keepalive=0.5=py27_0
 - mmtf-python=1.0.5=py27_0
 - rdflib=4.2.1=py27_0
