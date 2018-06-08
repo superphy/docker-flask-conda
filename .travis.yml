@@ -6,20 +6,21 @@ services:
   - docker
 
 before_install:
-  - docker build -t superphy/docker-flask-conda:latest .
-  - docker run -d -p 127.0.0.1:80:4567 superphy/docker-flask-conda:latest
-  - docker ps -a
-
-install:
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - export REPO=sebestblog/travis-demo
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
   - echo $TAG
   - echo $TRAVIS_BRANCH
-  - docker push superphy/docker-flask-conda:$TAG
+
+install:
+  - docker build -t superphy/docker-flask-conda:$TAG .
 
 script:
-  - docker ps
+  - docker run -d -p 127.0.0.1:80:4567 superphy/docker-flask-conda:$TAG
+  - docker ps -a
+
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push superphy/docker-flask-conda:$TAG
+
 
 after_failure::
   - conda env list

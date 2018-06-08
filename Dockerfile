@@ -136,16 +136,35 @@ RUN apt-get install -y curl grep sed dpkg && \
     apt-get clean
 
 #### Conda env.
+ENV ENVNAME backend
+
 RUN conda update -n base conda
 RUN conda update openssl --no-pin
-RUN conda config --add channels conda-forge && conda config --add channels bioconda && conda env create -n backend -f environment.yml
-RUN conda install -c bioconda rgi==4.0.3
+RUN conda config --add channels conda-forge && conda config --add channels bioconda && conda env create -n $ENVNAME -f environment.yml
 
-# activate the app environment
-ENV PATH /opt/conda/envs/backend/bin:$PATH
+# Add env to path.
+ENV PATH /opt/conda/envs/$ENVNAME/bin:$PATH
+
+# Path check.
+RUN echo $PATH
+
+# Additional setup for rgi.
+ENV card broadstreet-v2.0.1.tar.gz
+RUN wget --quiet https://card.mcmaster.ca/download/0/$card && \
+		tar -xf $card
+RUN rgi load --afile card.json
+
+# Activate the app environment
+#RUN ls -lah /opt/conda/envs/backend/bin/
+#RUN /opt/conda/envs/$ENVNAME/bin/activate
 #### End Spfy
 
-RUN echo $PATH
+#### Install pip requirements seprately from conda.
+RUN pip install -r requirements.txt
+
+# Checks.
+RUN which rgi
+RUN which ectyper
 RUN which uwsgi
 
 CMD ["/usr/bin/supervisord"]
